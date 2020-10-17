@@ -1,0 +1,9 @@
+ Error when running watchman
+ Error watchmanResponse version: '4.7.0', error: 'A non-recoverable condition has triggered.  Watchman needs your help!\n' +
+
+
+echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
+echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
+echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+
+watchman shutdown-server
